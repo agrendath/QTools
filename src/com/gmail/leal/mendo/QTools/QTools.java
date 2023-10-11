@@ -20,13 +20,12 @@ public class QTools extends JavaPlugin implements Listener{
 	@Override
     public void onEnable() {
         // TODO Insert logic to be performed when the plugin is enabled
-		getLogger().info("Launching QuickbarPlugin...");
+		getLogger().info("Launching QTools...");
 		Bukkit.getPluginManager().registerEvents(new Listeners(this),  this);
 		this.saveDefaultConfig(); // Create config file if it doesn't exist already
 		reloadConfig();
 		
 		getCommand("soulenchant").setTabCompleter(new TabCompletion());
-		getCommand("booster").setTabCompleter(new TabCompletion());
 		
 		// in case of /reload used and storage about players in a hashmap or PlayerJoinEvent
 		//for (Player player : Bukkit.getServer().getOnlinePlayers()) {
@@ -37,7 +36,7 @@ public class QTools extends JavaPlugin implements Listener{
     @Override
     public void onDisable() {
         // TODO Insert logic to be performed when the plugin is disabled
-    	getLogger().info("Disabling QuickbarPlugin...");
+    	getLogger().info("Disabling QTools...");
     }
     
     
