@@ -75,7 +75,7 @@ public class QTools extends JavaPlugin implements Listener{
     			return true;
     		}
     	}
-    	else if(cmd.getName().equalsIgnoreCase("janitatop"))  {
+    	else if(cmd.getName().equalsIgnoreCase("deathstop"))  {
     		if(!sender.hasPermission("quickbarplugin.janitatop"))  {
     			sender.sendMessage("§4You don't have permission to view this leaderboard");
     		}
@@ -88,7 +88,7 @@ public class QTools extends JavaPlugin implements Listener{
 			return true;
     	}
     	
-    	else if(cmd.getName().equalsIgnoreCase("janita2top"))  {
+    	else if(cmd.getName().equalsIgnoreCase("applestop"))  {
     		if(!sender.hasPermission("quickbarplugin.janita2top"))  {
     			sender.sendMessage("§4You don't have permission to view this leaderboard");
     			return true;
@@ -103,7 +103,7 @@ public class QTools extends JavaPlugin implements Listener{
     	}
     	
     	// The /janita command that shows a player's death count
-    	else if(cmd.getName().equalsIgnoreCase("janita"))  {
+    	else if(cmd.getName().equalsIgnoreCase("deaths"))  {
     		
     		// The /janita command that returns a player's amount of deaths
     		if(sender.hasPermission("quickbarplugin.janita"))  {
@@ -127,7 +127,7 @@ public class QTools extends JavaPlugin implements Listener{
     	}
     	
     	// The /janita2 command that shows a player's amount of apples eaten
-    	else if(cmd.getName().equalsIgnoreCase("janita2"))  {
+    	else if(cmd.getName().equalsIgnoreCase("apples"))  {
     		if(!sender.hasPermission("quickbarplugin.janita2"))  {
     			sender.sendMessage("§4You do not have permission for this");
     			return true;
@@ -179,7 +179,7 @@ public class QTools extends JavaPlugin implements Listener{
     	} 
     	
     	// The /emma command to give the quickbar switching tool
-    	else if(cmd.getName().equalsIgnoreCase("emma"))  {
+    	else if(cmd.getName().equalsIgnoreCase("qbs"))  {
     		if(sender.hasPermission("quickbarplugin.emma") && sender instanceof Player)  {
     			Player player = (Player) sender;
     			// give the quickbar switching tool
@@ -194,7 +194,7 @@ public class QTools extends JavaPlugin implements Listener{
     	}
     	
     	// The /emma2 command to convert xp to xp bottles
-    	else if(cmd.getName().equalsIgnoreCase("emma2"))  {
+    	else if(cmd.getName().equalsIgnoreCase("bottle"))  {
     		if(sender.hasPermission("quickbarplugin.emma2") && sender instanceof Player)  {
     			
     			// Check if the command has enough arguments

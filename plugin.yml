@@ -9,22 +9,22 @@ commands:
     usage: /tiago
     permission: quickbarplugin.tiago
     permission-message: You don't have permission to use this extremely powerful command
-  emma:
+  qbs:
     description: Gives the player the quickbar switching tool
     usage: /emma
     permission: quickbarplugin.emma
     permission-message: You don't have permission for that
-  emma2:
+  bottle:
     description: Converts xp into xp bottles
     usage: /emma2 <amount of bottles>
     permission: quickbarplugin.emma2
     permission-message: You don't have permission for that
-  janita:
+  deaths:
     description: Return the amount of deaths for a specific player
     usage: /janita <playername>
     permission: quickbarplugin.janita
     permission-message: You don't have permission for that
-  janita2:
+  apples:
     description: Return the amount of apples eaten for a specific player
     usage: /janita2 <playername>
     permission: quickbarplugin.janita2
@@ -44,12 +44,12 @@ commands:
     usage: /soulenchant <enchantment>
     permission: quickbarplugin.soulenchant
     permission-message: You don't have permission to enchant items with tiago souls
-  janitatop:
+  deathstop:
     description: Shows a leaderboard of the top 10 player's deaths
     usage: /janitatop
     permission: quickbarplugin.janitatop
     permission-message: You don't have permission for that
-  janita2top:
+  applestop:
     description: Shows a leaderboard of the top 10 player's apples eaten
     usage: /janita2top
     permission: quickbarplugin.janita2top
