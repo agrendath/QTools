@@ -14,7 +14,7 @@ commands:
     usage: /emma
     permission: quickbarplugin.emma
     permission-message: You don't have permission for that
-  bottle:
+  bottles:
     description: Converts xp into xp bottles
     usage: /emma2 <amount of bottles>
     permission: quickbarplugin.emma2

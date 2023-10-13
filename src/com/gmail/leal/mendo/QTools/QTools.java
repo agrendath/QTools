@@ -194,7 +194,7 @@ public class QTools extends JavaPlugin implements Listener{
     	}
     	
     	// The /emma2 command to convert xp to xp bottles
-    	else if(cmd.getName().equalsIgnoreCase("bottle"))  {
+    	else if(cmd.getName().equalsIgnoreCase("bottles"))  {
     		if(sender.hasPermission("quickbarplugin.emma2") && sender instanceof Player)  {
     			
     			// Check if the command has enough arguments
