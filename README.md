@@ -39,13 +39,13 @@ Soul Enchantments Costs:
 
 Permission Nodes:
 - quickbarplugin.tiago: Grants access to the /tiago command
-- quickbarplugin.emma: Grants access to the /emma command and the quickbar switching tool
-- quickbarplugin.emma2: Grants access to the /emma2 command to convert xp into xp bottles
-- quickbarplugin.janita: Grants access to the /janita command
-- quickbarplugin.janita2: Grants access to the /janita2 command
+- quickbarplugin.qbs: Grants access to the /emma command and the quickbar switching tool
+- quickbarplugin.bottles: Grants access to the /emma2 command to convert xp into xp bottles
+- quickbarplugin.deaths: Grants access to the /janita command
+- quickbarplugin.apples: Grants access to the /janita2 command
 - quickbarplugin.lucas: Grants access to the /lucas command
 - quickbarplugin.souls: Grants access to the /souls command and the manipulating of tiago souls
 - quickbarplugin.soulenchant: Grants access to the /soulenchant command
-- quickbarplugin.janitatop: Grants access to the /janitatop command
-- quickbarplugin.janita2top: Grants access to the /janita2top command
+- quickbarplugin.deathstop: Grants access to the /janitatop command
+- quickbarplugin.applestop: Grants access to the /janita2top command
 - quickbarplugin.extract: Grants access to the /extract command
