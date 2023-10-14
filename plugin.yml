@@ -11,23 +11,23 @@ commands:
     permission-message: You don't have permission to use this extremely powerful command
   qbs:
     description: Gives the player the quickbar switching tool
-    usage: /emma
-    permission: quickbarplugin.emma
+    usage: /qbs
+    permission: quickbarplugin.qbs
     permission-message: You don't have permission for that
   bottles:
     description: Converts xp into xp bottles
-    usage: /emma2 <amount of bottles>
-    permission: quickbarplugin.emma2
+    usage: /bottles <amount of bottles>
+    permission: quickbarplugin.bottles
     permission-message: You don't have permission for that
   deaths:
     description: Return the amount of deaths for a specific player
-    usage: /janita <playername>
-    permission: quickbarplugin.janita
+    usage: /deaths <playername>
+    permission: quickbarplugin.deaths
     permission-message: You don't have permission for that
   apples:
     description: Return the amount of apples eaten for a specific player
-    usage: /janita2 <playername>
-    permission: quickbarplugin.janita2
+    usage: /apples <playername>
+    permission: quickbarplugin.apples
     permission-message: You don't have permission for that
   lucas:
     description: Returns useful information about lucas
@@ -46,13 +46,13 @@ commands:
     permission-message: You don't have permission to enchant items with tiago souls
   deathstop:
     description: Shows a leaderboard of the top 10 player's deaths
-    usage: /janitatop
-    permission: quickbarplugin.janitatop
+    usage: /deathstop
+    permission: quickbarplugin.deathstop
     permission-message: You don't have permission for that
   applestop:
     description: Shows a leaderboard of the top 10 player's apples eaten
-    usage: /janita2top
-    permission: quickbarplugin.janita2top
+    usage: /applestop
+    permission: quickbarplugin.applestop
     permission-message: You don't have permission for that
   extract:
     description: Extracts an enchantment from an item and gives it to the player in enchanted book form, does not work for soul enchantments
