@@ -35,15 +35,15 @@ commands:
     permission: quickbarplugin.lucas
     permission-message: You don't have permission to use this extremely powerful command
   souls:
-    description: Returns your tiago souls balance or lets you give souls to another player
+    description: Returns your souls balance or lets you give souls to another player
     usage: /souls give <player> <amount>
     permission: quickbarplugin.souls
-    permission-message: You don't have permission to manipulate tiago souls
+    permission-message: You don't have permission to manipulate souls
   soulenchant:
     description: Enchants the item in your hand with a soul enchantment, available enchantments are magnetism and indestructibility
     usage: /soulenchant <enchantment>
     permission: quickbarplugin.soulenchant
-    permission-message: You don't have permission to enchant items with tiago souls
+    permission-message: You don't have permission to enchant items with souls
   deathstop:
     description: Shows a leaderboard of the top 10 player's deaths
     usage: /deathstop

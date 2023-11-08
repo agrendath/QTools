@@ -42,13 +42,13 @@ public class QTools extends JavaPlugin implements Listener{
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-    	// the /souls command that shows a player's tiago souls
+    	// the /souls command that shows a player's souls
     	if(cmd.getName().equalsIgnoreCase("souls"))  {
     		if(sender.hasPermission("quickbarplugin.souls") && sender instanceof Player)  {
     			Player player = Bukkit.getPlayer(sender.getName());
     			if(args.length == 0)  {
         			if(player != null)  {
-        				sender.sendMessage("§5Tiago Soul Balance: " + SoulEnchantments.getSouls(player, this.getConfig()));
+        				sender.sendMessage("§5Soul Balance: " + SoulEnchantments.getSouls(player, this.getConfig()));
         			}
         			else  {
         				sender.sendMessage("§4Invalid command use, you are not a player.");
@@ -71,7 +71,7 @@ public class QTools extends JavaPlugin implements Listener{
         		}
         	}
     		else  {
-    			sender.sendMessage("§4You don't have permission to manipulate tiago souls");
+    			sender.sendMessage("§4You don't have permission to manipulate souls");
     			return true;
     		}
     	}
@@ -169,7 +169,7 @@ public class QTools extends JavaPlugin implements Listener{
     	else if(cmd.getName().equalsIgnoreCase("lucas"))  {
     		if(sender.hasPermission("quickbarplugin.lucas"))  {
     			// display message "gay"
-    			sender.sendMessage("§d-> is useless");
+    			sender.sendMessage("§duseless");
     		}
     		else  {
     			// inform the user that they don't have the permission to use this command

@@ -40,13 +40,13 @@ public class Listeners implements Listener{
     	Player killed = e.getEntity();
     	Player killer = killed.getKiller();
     	if(killed.getUniqueId().toString().equalsIgnoreCase("b2a75ec7-c556-4f47-8b61-bfb1780b4ac5")) {  // killing tiago
-    		killer.sendMessage("§6Congratulations! You have obtained a §5Tiago Soul");
+    		killer.sendMessage("§6Congratulations! You have obtained a §5Soul");
     		SoulEnchantments.changeSouls(killer, 1, qtoolsPlugin);
     	}
     	else if(killed.getUniqueId().toString().equalsIgnoreCase("df736569-ffed-40e7-9c92-074661b86b09"))  {  // killing lucas (10% chance of tiago soul)
     		int random = (int) (Math.random() * 10 + 1);  // random int in interval [0, 9] (inclusive)
     		if(random == 0)  {
-    			killer.sendMessage("§6Congratulations! You have obtained a §5Tiago Soul");
+    			killer.sendMessage("§6Congratulations! You have obtained a §5Soul");
     			SoulEnchantments.changeSouls(killer, 1, qtoolsPlugin);
     		}
     	}
@@ -163,7 +163,7 @@ public class Listeners implements Listener{
     			}
     			world.createExplosion(x, y, z, 3F, false, false);
     			SoulEnchantments.changeSouls(player, 1, qtoolsPlugin);
-    			player.sendMessage("§6Congratulations! You have obtained a Tiago Soul by destroying his majestic statue.");
+    			player.sendMessage("§6Congratulations! You have obtained a Soul by destroying the majestic statue.");
     		}
     	}
     	

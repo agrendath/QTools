@@ -8,7 +8,7 @@ Functionality/Commands:
 - /apples \<playername\> - Shows how many apples a player has eaten since installation of the plugin
 - /tiago - Displays useful information about tiago
 - /lucas - Displays useful information about lucas
-- /souls - Shows a player's balance of Tiago Souls
+- /souls - Shows a player's balance of Souls
 - /souls give \[playername\] \[amount\] - Give the specified amount of souls to another player (this will deduct them from your balance, obviously)
 - /soulenchant \<enchantment\> - Enchants the item the player is holding with a soulenchantment, see available enchantments below
 - /deathstop - Shows the leaderboard of the top 10 players with most deaths
@@ -27,15 +27,15 @@ Soul Enchantments:
 - Reflection: usable on shields, will reflect 10% of potential damage taken
 
 Soul Enchantments Costs:
-- Magnetism: 1 Tiago Soul and 2000 xp
-- Indestructibility: 1 Tiago Soul and 2500 xp
-- Harvesting: 1 Tiago Soul and 3000 xp
-- Vampirism: 1 Tiago Soul and 4000 xp
-- Swiftness: 1 Tiago Soul and 4000 xp
-- Looting: 0 Tiago Souls and 2000 xp
-- Thunderlord: 1 Tiago Soul and 3500 xp
-- Absorption: 1 Tiago Soul and 4000 xp
-- Reflection: 1 Tiago Soul and 4000 xp
+- Magnetism: 1 Soul and 2000 xp
+- Indestructibility: 1 Soul and 2500 xp
+- Harvesting: 1 Soul and 3000 xp
+- Vampirism: 1 Soul and 4000 xp
+- Swiftness: 1 Soul and 4000 xp
+- Looting: 0 Souls and 2000 xp
+- Thunderlord: 1 Soul and 3500 xp
+- Absorption: 1 Soul and 4000 xp
+- Reflection: 1 Soul and 4000 xp
 
 Permission Nodes:
 - quickbarplugin.tiago: Grants access to the /tiago command
@@ -44,7 +44,7 @@ Permission Nodes:
 - quickbarplugin.deaths: Grants access to the /janita command
 - quickbarplugin.apples: Grants access to the /janita2 command
 - quickbarplugin.lucas: Grants access to the /lucas command
-- quickbarplugin.souls: Grants access to the /souls command and the manipulating of tiago souls
+- quickbarplugin.souls: Grants access to the /souls command and the manipulating of souls
 - quickbarplugin.soulenchant: Grants access to the /soulenchant command
 - quickbarplugin.deathstop: Grants access to the /janitatop command
 - quickbarplugin.applestop: Grants access to the /janita2top command

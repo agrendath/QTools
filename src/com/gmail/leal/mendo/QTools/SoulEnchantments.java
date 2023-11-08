@@ -198,15 +198,15 @@ public class SoulEnchantments {
 			if(receiver != null)  {
 				SoulEnchantments.changeSouls(sender, amount*-1, quickbarPlugin);
 				SoulEnchantments.changeSouls(receiver, amount, quickbarPlugin);
-				receiver.sendMessage("§5You received " + amount + " tiago soul(s) from " + sender.getName());
-				sender.sendMessage("§5Transferred " + amount + " tiago soul(s) to " + receiverName);
+				receiver.sendMessage("§5You received " + amount + " soul(s) from " + sender.getName());
+				sender.sendMessage("§5Transferred " + amount + " soul(s) to " + receiverName);
 				return true;
 			}
 			else  {
 				if(Bukkit.getOfflinePlayer(receiverName).hasPlayedBefore())  {
 					SoulEnchantments.changeSouls(sender, amount*-1, quickbarPlugin);
 					SoulEnchantments.changeSoulsFromUUID(Bukkit.getOfflinePlayer(receiverName).getUniqueId(), amount, quickbarPlugin);
-					sender.sendMessage("§5Transferred " + amount + " tiago soul(s) to " + receiverName);
+					sender.sendMessage("§5Transferred " + amount + " soul(s) to " + receiverName);
 					return true;
 				}
 				else  {
@@ -304,7 +304,7 @@ public class SoulEnchantments {
     }
     
     /**
-     * Checks if this player has a 'tiago souls' count registered in the config file
+     * Checks if this player has a 'souls' count registered in the config file
      */
     public static boolean soulsRegisteredInConfig(Player player, FileConfiguration config)  {
     	if(config.isSet("souls." + player.getUniqueId()))  {
