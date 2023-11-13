@@ -1,7 +1,7 @@
 # QTools
 Minecraft Spigot QTools Plugin
 
-Functionality/Commands:
+Commands:
 - /qbs - Gives the player a special tool that lets you switch your quickbar with the first line of your inventory by right-clicking
 - /bottles \<amount\> - Converts your xp to a certain amount of experience bottles, experience bottles
 - /deaths \<playername\> - Shows how many time a player has died since installation of the plugin
@@ -14,6 +14,9 @@ Functionality/Commands:
 - /deathstop - Shows the leaderboard of the top 10 players with most deaths
 - /applestop - Shows the leaderboard of the top 10 players with most apples eaten
 - /extract \<enchantment\> - Extracts an enchantment from the item in the player's hand by giving it to them in the form of an enchanted book and removing it from the item, this costs 2000 xp and does not work for soul enchantments
+
+Other Functionality:
+- Fortune on hoes also increases drops from harvesting wheat, carrots, potatoes and beetroot with the hoe
 
 Soul Enchantments:
 - Magnetism: usable on all tools and weapons, when you destroy blocks or kill mobs/players the loot drops and xp drops get absorbed right into your inventory/xp bar

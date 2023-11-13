@@ -2,12 +2,14 @@ package com.gmail.leal.mendo.QTools;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.HumanEntity;
@@ -17,6 +19,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ExpBottleEvent;
@@ -164,6 +167,23 @@ public class Listeners implements Listener{
     			world.createExplosion(x, y, z, 3F, false, false);
     			SoulEnchantments.changeSouls(player, 1, qtoolsPlugin);
     			player.sendMessage("§6Congratulations! You have obtained a Soul by destroying the majestic statue.");
+    		}
+    	}
+    	
+    	if(GeneralUtil.isHoldingHoe(player) && GeneralUtil.otherFortuneAffectedBlocks.contains(e.getBlock().getType()))  {
+    		// If a player breaks a farming block of our given types with a Hoe
+    		
+    		// Check if the hoe has fortune, and if so modify the drops it will give
+    		int fortuneLevel = item.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
+    		if(fortuneLevel > 0)  {
+    			int maxDrops = fortuneLevel + 1;
+        		int minDrops = 1;
+        		int toDrop = GeneralUtil.randomInRange(minDrops, maxDrops);
+        		e.setDropItems(false); // Prevent block from dropping items normally
+        		List<ItemStack> originalDrops = (List<ItemStack>) e.getBlock().getDrops(item);
+        		ItemStack newDrop = originalDrops.get(0);
+        		newDrop.setAmount(toDrop);
+        		e.getBlock().getWorld().dropItem(e.getBlock().getLocation(), newDrop);  // Drop the altered item in the location of the block
     		}
     	}
     	

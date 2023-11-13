@@ -1,6 +1,9 @@
 package com.gmail.leal.mendo.QTools;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -23,6 +26,22 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 
 public class GeneralUtil {
+	
+	public static final List<Material> otherFortuneAffectedBlocks = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WHEAT, Material.CARROTS, Material.POTATOES, Material.BEETROOTS}));
+	
+	private static final List<Material> hoes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WOODEN_HOE, Material.STONE_HOE, Material.IRON_HOE, Material.GOLDEN_HOE, Material.DIAMOND_HOE, Material.NETHERITE_HOE}));
+	
+	
+	public static boolean isHoldingHoe(Player player)  {
+		ItemStack hand = player.getInventory().getItemInMainHand();
+		Material type = hand.getType();
+		return hoes.contains(type);
+	}
+	
+	public static int randomInRange(int min, int max)  {
+		Random rand = new Random();
+		return rand.nextInt(max) + 1;
+	}
 	
 	public static boolean takeAmountFromInventory(Player player, ItemStack item, int amount)  {
 		int count = 0;
