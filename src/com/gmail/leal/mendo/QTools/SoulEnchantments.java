@@ -76,49 +76,49 @@ public class SoulEnchantments {
 			validTypes = validAbsorptionTypes;
 			enchantment = ENCHANTMENT_ABSORPTION;
 			soulCost = 1;
-			xpCost = 2000;
+			xpCost = 3000;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_DOUBLEXP))  {
 			validTypes = validDoublexpTypes;
 			enchantment = ENCHANTMENT_DOUBLEXP;
 			soulCost = 1;
-			xpCost = 3000;
+			xpCost = 4000;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_INDESTRUCTIBILITY))  {
 			validTypes = validIndestructibilityTypes;
 			enchantment = ENCHANTMENT_INDESTRUCTIBILITY;
 			soulCost = 1;
-			xpCost = 2500;
+			xpCost = 3500;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_VAMPIRISM))  {
 			validTypes = validVampirismTypes;
 			enchantment = ENCHANTMENT_VAMPIRISM;
 			soulCost = 1;
-			xpCost = 4000;
+			xpCost = 5000;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_MOVESPEED))  {
 			validTypes = validMovespeedTypes;
 			enchantment = ENCHANTMENT_MOVESPEED;
 			soulCost = 1;
-			xpCost = 4000;
+			xpCost = 5000;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_THUNDERLORD))  {
 			validTypes = validThunderlordTypes;
 			enchantment = ENCHANTMENT_THUNDERLORD;
 			soulCost = 1;
-			xpCost = 3500;
+			xpCost = 4500;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_TOUGHNESS))  {
 			validTypes = validToughnessTypes;
 			enchantment = ENCHANTMENT_TOUGHNESS;
 			soulCost = 1;
-			xpCost = 4000;
+			xpCost = 5000;
 		}
 		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_REFLECTION))  {
 			validTypes = validReflectionTypes;
 			enchantment = ENCHANTMENT_REFLECTION;
 			soulCost = 1;
-			xpCost = 4000;
+			xpCost = 5000;
 		}
 		else if(enchantment.equalsIgnoreCase("looting"))  {
 			// Special looting for bows soul enchantment
@@ -126,7 +126,7 @@ public class SoulEnchantments {
 			validTypes.add(Material.BOW);
 			enchantment = "Looting";
 			soulCost = 0;
-			xpCost = 2000;
+			xpCost = 3000;
 		}
 		else  {
 			player.sendMessage("§4Invalid Enchantment");

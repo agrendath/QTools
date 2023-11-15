@@ -29,16 +29,16 @@ Soul Enchantments:
 - Absorption: usable on diamond or netherite armor and shields, gives the wearer a 20% health boost (aka 2 extra hearts)
 - Reflection: usable on shields, will reflect 10% of potential damage taken
 
-Soul Enchantments Costs:
-- Magnetism: 1 Soul and 2000 xp
-- Indestructibility: 1 Soul and 2500 xp
-- Harvesting: 1 Soul and 3000 xp
-- Vampirism: 1 Soul and 4000 xp
-- Swiftness: 1 Soul and 4000 xp
-- Looting: 0 Souls and 2000 xp
-- Thunderlord: 1 Soul and 3500 xp
-- Absorption: 1 Soul and 4000 xp
-- Reflection: 1 Soul and 4000 xp
+Soul Enchantments Costs (+lvl equivalent):
+- Magnetism: 1 Soul and 3000 xp (lvl 40)
+- Indestructibility: 1 Soul and 3500 xp (lvl 42)
+- Harvesting: 1 Soul and 4000 xp (lvl 44)
+- Vampirism: 1 Soul and 5000 xp (lvl 48)
+- Swiftness: 1 Soul and 5000 xp (lvl 48)
+- Looting: 0 Souls and 3000 xp (lvl 40)
+- Thunderlord: 1 Soul and 4500 xp (lvl 46)
+- Absorption: 1 Soul and 5000 xp (lvl 48)
+- Reflection: 1 Soul and 5000 xp (lvl 48)
 
 Permission Nodes:
 - quickbarplugin.tiago: Grants access to the /tiago command
