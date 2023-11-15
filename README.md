@@ -28,6 +28,7 @@ Soul Enchantments:
 - Thunderlord: usable on all weapons and bows, gives a 10 % chance to summon lightning doing 25% of the original hit's damage extra
 - Absorption: usable on diamond or netherite armor and shields, gives the wearer a 20% health boost (aka 2 extra hearts)
 - Reflection: usable on shields, will reflect 10% of potential damage taken
+- Felling: usable on axes, will take down all log/stem blocks above the one the axe broke (cut down trees in one hit). Works together with magnetism.
 
 Soul Enchantments Costs (+lvl equivalent):
 - Magnetism: 1 Soul and 3000 xp (lvl 40)
@@ -39,6 +40,7 @@ Soul Enchantments Costs (+lvl equivalent):
 - Thunderlord: 1 Soul and 4500 xp (lvl 46)
 - Absorption: 1 Soul and 5000 xp (lvl 48)
 - Reflection: 1 Soul and 5000 xp (lvl 48)
+- Felling: 1 Soul and 5000 xp (lvl 48)
 
 Permission Nodes:
 - quickbarplugin.tiago: Grants access to the /tiago command
