@@ -124,6 +124,8 @@ public class Listeners implements Listener{
     public void onBlockBreak(BlockBreakEvent e)  {
     	Player player = e.getPlayer();
     	ItemStack item = player.getInventory().getItemInMainHand();
+    	boolean hasAbsorption = SoulEnchantments.validAbsorptionTypes.contains(item.getType()) && SoulEnchantments.hasCustomEnchant(item, SoulEnchantments.ENCHANTMENT_ABSORPTION);
+    	
     	if(e.getBlock().getType().equals(Material.CARVED_PUMPKIN))  {
     		boolean diamondBlocks = false;
     		boolean emeraldBlocks = false;
@@ -170,7 +172,8 @@ public class Listeners implements Listener{
     		}
     	}
     	
-    	if(GeneralUtil.isHoldingHoe(player) && GeneralUtil.otherFortuneAffectedBlocks.contains(e.getBlock().getType()))  {
+    	// Check if a player is using a hoe with fortune to break a farming block
+    	if(GeneralUtil.isHoldingHoe(player) && GeneralUtil.hoeFortuneAffectedBlocks.contains(e.getBlock().getType()))  {
     		// If a player breaks a farming block of our given types with a Hoe
     		
     		// Check if the hoe has fortune, and if so modify the drops it will give
@@ -187,7 +190,54 @@ public class Listeners implements Listener{
     		}
     	}
     	
-    	if(SoulEnchantments.validAbsorptionTypes.contains(item.getType()) && SoulEnchantments.hasCustomEnchant(item, SoulEnchantments.ENCHANTMENT_ABSORPTION))  {
+    	// Check if the block being broken is of a wood type and if the player is breaking it with an axe with the felling soul enchantment
+    	if(GeneralUtil.woodTypes.contains(e.getBlock().getType()))  {
+    		if(SoulEnchantments.validFellingTypes.contains(item.getType()) && SoulEnchantments.hasCustomEnchant(item, SoulEnchantments.ENCHANTMENT_FELLING))  {
+    			Block block = e.getBlock();
+    			World world = e.getBlock().getWorld();
+    			Location location = block.getLocation();
+    			double yMin = location.getY() + 1;
+    			double yMax = yMin;
+    			Location currentLocation = new Location(world, location.getX(), yMin, location.getZ());
+    			Block currentBlock = world.getBlockAt(currentLocation);
+    			if(GeneralUtil.woodTypes.contains(currentBlock.getType()))  {
+					// Test for absorption
+					if(hasAbsorption)  {
+						GeneralUtil.breakBlockWithMagnetism(currentBlock, world, player);
+					}
+					else  {
+						GeneralUtil.breakBlockNormally(currentBlock, world);
+					}
+				}
+    			
+    			yMin = yMax + 1;
+    			yMax = yMin + 10;
+    			double xMin = location.getX() - 4;
+    			double xMax = location.getX() + 4;
+    			double zMin = location.getZ() - 4;
+    			double zMax = location.getZ() + 4;
+    			for(double x = xMin; x <= xMax; x++)  {
+    				for(double y = yMin; y <= yMax; y++)  {
+    					for(double z = zMin; z <= zMax; z++)  {
+    						currentLocation = new Location(world, x, y, z);
+    						currentBlock = world.getBlockAt(currentLocation);
+    						if(GeneralUtil.woodTypes.contains(currentBlock.getType()))  {
+    							// Test for absorption
+    	    					if(hasAbsorption)  {
+    	    						GeneralUtil.breakBlockWithMagnetism(currentBlock, world, player);
+    	    					}
+    	    					else  {
+    	    						GeneralUtil.breakBlockNormally(currentBlock, world);
+    	    					}
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	
+    	// Check if a block is broken with absorption
+    	if(hasAbsorption)  {
     		// The item with which the block is being broken is of a valid type and contains the absorption echantment
     		
     		// First handle the xp drops
@@ -238,6 +288,7 @@ public class Listeners implements Listener{
 			}
     	}
     	
+    	// Check if a block's dropped xp needs to be doubled due to a Harvesting enchantment
     	if(SoulEnchantments.validDoublexpTypes.contains(item.getType()) && SoulEnchantments.hasCustomEnchant(item, SoulEnchantments.ENCHANTMENT_DOUBLEXP))  {
     		e.setExpToDrop(e.getExpToDrop() * 2);
     	}

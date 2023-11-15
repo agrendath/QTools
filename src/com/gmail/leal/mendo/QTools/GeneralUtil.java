@@ -10,8 +10,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
@@ -27,10 +29,27 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class GeneralUtil {
 	
-	public static final List<Material> otherFortuneAffectedBlocks = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WHEAT, Material.CARROTS, Material.POTATOES, Material.BEETROOTS}));
+	public static final List<Material> hoeFortuneAffectedBlocks = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WHEAT, Material.CARROTS, Material.POTATOES, Material.BEETROOTS}));
+	public static final List<Material> woodTypes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.OAK_LOG, Material.SPRUCE_LOG, Material.BIRCH_LOG, Material.JUNGLE_LOG, Material.ACACIA_LOG, Material.DARK_OAK_LOG, Material.MANGROVE_LOG, Material.CHERRY_LOG, Material.CRIMSON_STEM, Material.WARPED_STEM}));
 	
 	private static final List<Material> hoes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WOODEN_HOE, Material.STONE_HOE, Material.IRON_HOE, Material.GOLDEN_HOE, Material.DIAMOND_HOE, Material.NETHERITE_HOE}));
 	
+	public static void breakBlockNormally(Block block, World world)  {
+		List<ItemStack> drops = (List<ItemStack>) block.getDrops();
+		block.setType(Material.AIR);
+		Location location = block.getLocation();
+		for(ItemStack is : drops)  {
+			world.dropItem(location, is);
+		}
+	}
+	
+	public static void breakBlockWithMagnetism(Block block, World world, Player player)  {
+		List<ItemStack> drops = (List<ItemStack>) block.getDrops();
+		block.setType(Material.AIR);
+		for(ItemStack is : drops)  {
+			giveItem(player, is);
+		}
+	}
 	
 	public static boolean isHoldingHoe(Player player)  {
 		ItemStack hand = player.getInventory().getItemInMainHand();

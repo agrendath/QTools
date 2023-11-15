@@ -28,6 +28,7 @@ public class SoulEnchantments {
 	public final static List<Material> validThunderlordTypes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WOODEN_SWORD, Material.STONE_SWORD, Material.IRON_SWORD, Material.GOLDEN_SWORD, Material.DIAMOND_SWORD, Material.NETHERITE_SWORD, Material.BOW}));
 	public final static List<Material> validToughnessTypes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.DIAMOND_BOOTS, Material.NETHERITE_BOOTS, Material.DIAMOND_LEGGINGS, Material.NETHERITE_LEGGINGS, Material.DIAMOND_CHESTPLATE, Material.NETHERITE_CHESTPLATE, Material.DIAMOND_HELMET, Material.NETHERITE_HELMET, Material.SHIELD}));
 	public final static List<Material> validReflectionTypes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.SHIELD}));
+	public final static List<Material> validFellingTypes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WOODEN_AXE, Material.STONE_AXE, Material.IRON_AXE, Material.GOLDEN_AXE, Material.DIAMOND_AXE, Material.NETHERITE_AXE}));
 	public final static String ENCHANTMENT_INDESTRUCTIBILITY = "Indestructibility";
 	public final static String ENCHANTMENT_ABSORPTION = "Magnetism";
 	public final static String ENCHANTMENT_DOUBLEXP = "Harvesting";
@@ -36,6 +37,7 @@ public class SoulEnchantments {
 	public final static String ENCHANTMENT_THUNDERLORD = "Thunderlord";
 	public final static String ENCHANTMENT_TOUGHNESS = "Absorption";
 	public final static String ENCHANTMENT_REFLECTION = "Reflection";
+	public final static String ENCHANTMENT_FELLING = "Felling";
 	
 	/**
 	 * Returns a list of strings of all possible soul enchantments
@@ -51,6 +53,7 @@ public class SoulEnchantments {
 		result.add(ENCHANTMENT_THUNDERLORD);
 		result.add(ENCHANTMENT_TOUGHNESS);
 		result.add(ENCHANTMENT_REFLECTION);
+		result.add(ENCHANTMENT_FELLING);
 		return result;
 	}
 	
@@ -127,6 +130,12 @@ public class SoulEnchantments {
 			enchantment = "Looting";
 			soulCost = 0;
 			xpCost = 3000;
+		}
+		else if(enchantment.equalsIgnoreCase(ENCHANTMENT_FELLING))  {
+			validTypes = validFellingTypes;
+			enchantment = ENCHANTMENT_FELLING;
+			soulCost = 1;
+			xpCost = 5000;
 		}
 		else  {
 			player.sendMessage("§4Invalid Enchantment");
