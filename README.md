@@ -1,5 +1,6 @@
 # QTools
 Minecraft Spigot QTools Plugin
+For spigot 1.20.4
 
 Commands:
 - /qbs - Gives the player a special tool that lets you switch your quickbar with the first line of your inventory by right-clicking
