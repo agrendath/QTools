@@ -153,7 +153,7 @@ public class SoulEnchantments {
 			player.sendMessage("§4This item already has the given enchantment");
 			return true;
 		}
-		if(enchantment.equalsIgnoreCase("looting") && item.containsEnchantment(Enchantment.LOOT_BONUS_MOBS))  {
+		if(enchantment.equalsIgnoreCase("looting") && item.containsEnchantment(Enchantment.FORTUNE))  {
 			player.sendMessage("§4This item already has the given enchantment");
 			return true;
 		}
@@ -181,16 +181,16 @@ public class SoulEnchantments {
 			else if(enchantment.equalsIgnoreCase(ENCHANTMENT_MOVESPEED))  {
 				GeneralUtil.applyDefaultAttributes(item);
 				ItemMeta meta = item.getItemMeta();
-				meta.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Extra Speed", 0.2d, AttributeModifier.Operation.ADD_SCALAR, EquipmentSlot.FEET));
+				meta.addAttributeModifier(Attribute.MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Extra Speed", 0.2d, AttributeModifier.Operation.ADD_SCALAR, EquipmentSlot.FEET));
 				item.setItemMeta(meta);
 			}
 			else if(enchantment.equalsIgnoreCase("looting"))  {
-				item.addUnsafeEnchantment(Enchantment.LOOT_BONUS_MOBS, 3);
+				item.addUnsafeEnchantment(Enchantment.FORTUNE, 3);
 			}
 			else if(enchantment.equalsIgnoreCase(ENCHANTMENT_TOUGHNESS))  {
 				GeneralUtil.applyDefaultAttributes(item);
 				ItemMeta meta = item.getItemMeta();
-				meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "Extra Health", 0.2d, AttributeModifier.Operation.ADD_SCALAR, GeneralUtil.getEquipmentSlot(item)));
+				meta.addAttributeModifier(Attribute.MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "Extra Health", 0.2d, AttributeModifier.Operation.ADD_SCALAR, GeneralUtil.getEquipmentSlot(item)));
 				item.setItemMeta(meta);
 			}
 			

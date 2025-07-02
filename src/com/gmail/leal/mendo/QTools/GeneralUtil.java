@@ -221,35 +221,35 @@ public class GeneralUtil {
     	Material type = item.getType();
     	ItemMeta meta = item.getItemMeta();
     	if(type.equals(Material.DIAMOND_HELMET) || type.equals(Material.DIAMOND_CHESTPLATE) || type.equals(Material.DIAMOND_LEGGINGS) || type.equals(Material.DIAMOND_BOOTS))
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "Base Armor Toughness", 2.0, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
+    		meta.addAttributeModifier(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "Base Armor Toughness", 2.0, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
     	else if(type.equals(Material.NETHERITE_HELMET) || type.equals(Material.NETHERITE_CHESTPLATE) || type.equals(Material.NETHERITE_LEGGINGS) || type.equals(Material.NETHERITE_BOOTS))  {
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "Base Armor Toughness", 3.0, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
-    		meta.addAttributeModifier(Attribute.GENERIC_KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.randomUUID(), "Base Knockback Resistance", 0.1, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
+    		meta.addAttributeModifier(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "Base Armor Toughness", 3.0, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
+    		meta.addAttributeModifier(Attribute.KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.randomUUID(), "Base Knockback Resistance", 0.1, AttributeModifier.Operation.ADD_NUMBER, getEquipmentSlot(item)));
     	}
     	switch(type)  {
     	case DIAMOND_HELMET:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HEAD));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HEAD));
     		break;
     	case DIAMOND_CHESTPLATE:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
     		break;
     	case DIAMOND_LEGGINGS:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.LEGS));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.LEGS));
     		break;
     	case DIAMOND_BOOTS:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.FEET));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.FEET));
     		break;
     	case NETHERITE_HELMET:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HEAD));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HEAD));
     		break;
     	case NETHERITE_CHESTPLATE:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
     		break;
     	case NETHERITE_LEGGINGS:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.LEGS));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.LEGS));
     		break;
     	case NETHERITE_BOOTS:
-    		meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.FEET));
+    		meta.addAttributeModifier(Attribute.ARMOR, new AttributeModifier(UUID.randomUUID(), "Base Armor", 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.FEET));
     		break;
     	default:
     		break;

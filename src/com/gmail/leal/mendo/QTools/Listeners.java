@@ -177,7 +177,7 @@ public class Listeners implements Listener{
     		// If a player breaks a farming block of our given types with a Hoe
     		
     		// Check if the hoe has fortune, and if so modify the drops it will give
-    		int fortuneLevel = item.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS);
+    		int fortuneLevel = item.getEnchantmentLevel(Enchantment.FORTUNE);
     		if(fortuneLevel > 0)  {
     			int maxDrops = fortuneLevel + 1;
         		int minDrops = 1;
@@ -352,9 +352,9 @@ public class Listeners implements Listener{
     			}
     			
     			double newHealth = damager.getHealth() + multiplier*e.getFinalDamage();
-    			if(newHealth > damager.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue())  {
+    			if(newHealth > damager.getAttribute(Attribute.MAX_HEALTH).getValue())  {
     				// to prevent setting the health above 20.0 which is the maximum
-    				damager.setHealth(damager.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
+    				damager.setHealth(damager.getAttribute(Attribute.MAX_HEALTH).getValue());
     			}
     			else  {
     				damager.setHealth(newHealth);
