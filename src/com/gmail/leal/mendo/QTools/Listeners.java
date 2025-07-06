@@ -12,9 +12,11 @@ import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -25,6 +27,7 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ExpBottleEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
@@ -95,8 +98,57 @@ public class Listeners implements Listener{
         			// Switch Quickbar
         			QuickbarSwitcher.switchItems(player);
         			
+        			e.setCancelled(true);  // Cancel the original event to make sure we don't accidentally do something else as well
         		}
     		}
+    	}
+    	if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK))  {
+    		ItemStack item = e.getItem();
+    		if(Recipes.isFullVillagerContainer(item))  {
+    			// If the player right clicked a block with a full villager container
+    			// Spawn a new villager
+    			World world = e.getPlayer().getWorld();
+    			Location loc = e.getClickedBlock().getLocation();
+    			loc.setY(loc.getY() + 1);
+    			world.spawnEntity(loc, EntityType.VILLAGER);
+    			
+    			// Then empty the container
+    			GeneralUtil.clearLore(item);
+    			GeneralUtil.addLore(item, Constant.VILLAGER_CONTAINER_EMPTY_LORE);
+    			
+    			// Send a message to the player
+    			e.getPlayer().sendMessage(Constant.VILLAGER_RELEASED_MESSAGE);
+    			
+    			// Then make sure the original event is cancelled
+    			e.setCancelled(true);
+    		}
+    		if(Recipes.isEmptyVillagerContainer(item))  {
+    			// If the player right clicked a block with an empty villager container
+    			// Just cancel the event to ensure that the player cannot place the villager container
+    			e.setCancelled(true);
+    		}
+    	}
+    }
+    
+    @EventHandler
+    public void onPlayerInteractEntity(PlayerInteractEntityEvent e)  {
+    	Entity entity = e.getRightClicked();
+    	if(entity instanceof Villager && Recipes.isEmptyVillagerContainer(e.getPlayer().getInventory().getItemInMainHand()))  {
+    		// If a villager has been right clicked and the player is holding an empty villager container item
+    		
+    		// First remove the villager from the world
+    		entity.remove();
+    		
+    		// Change the lore of the villager container item to state it contains a villager
+    		ItemStack villagerContainer = e.getPlayer().getInventory().getItemInMainHand();
+    		GeneralUtil.clearLore(villagerContainer);
+    		GeneralUtil.addLore(villagerContainer, Constant.VILLAGER_CONTAINER_FULL_LORE);
+    		
+    		// Send message to the player
+    		e.getPlayer().sendMessage(Constant.VILLAGER_TRAPPED_MESSAGE);
+    		
+    		// Ensure that the original event doesn't happen (aka we don't open a villager menu)
+    		e.setCancelled(true);
     	}
     }
     

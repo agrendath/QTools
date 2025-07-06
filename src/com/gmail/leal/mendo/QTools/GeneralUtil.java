@@ -34,6 +34,39 @@ public class GeneralUtil {
 	
 	private static final List<Material> hoes = new ArrayList<Material>(Arrays.asList(new Material[] {Material.WOODEN_HOE, Material.STONE_HOE, Material.IRON_HOE, Material.GOLDEN_HOE, Material.DIAMOND_HOE, Material.NETHERITE_HOE}));
 	
+	
+	public static void addLore(ItemStack item, String newLore)  {
+		ItemMeta meta = item.getItemMeta();
+		List<String> lore = meta.getLore();
+		if(lore == null)  {
+			List<String> newList = new ArrayList<String>();
+			newList.add(newLore);
+			meta.setLore(newList);
+		}
+		else  {
+			lore.add(newLore);
+		}
+		item.setItemMeta(meta);
+	}
+	
+	public static boolean hasLore(ItemStack item, String lore)  {
+		ItemMeta meta = item.getItemMeta();
+		List<String> itemLore = meta.getLore();
+		if(itemLore == null) return false;
+		for(String s : itemLore)  {
+			if(lore.equalsIgnoreCase(s))  {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void clearLore(ItemStack item)  {
+		ItemMeta meta = item.getItemMeta();
+		meta.setLore(new ArrayList<String>());
+		item.setItemMeta(meta);
+	}
+	
 	public static void breakBlockNormally(Block block, World world)  {
 		List<ItemStack> drops = (List<ItemStack>) block.getDrops();
 		block.setType(Material.AIR);
@@ -254,6 +287,12 @@ public class GeneralUtil {
     	default:
     		break;
     	}
+    	item.setItemMeta(meta);
+    }
+    
+    public static void changeItemName(ItemStack item, String newName)  {
+    	ItemMeta meta = item.getItemMeta();
+    	meta.setDisplayName(newName);
     	item.setItemMeta(meta);
     }
 }

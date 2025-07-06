@@ -27,6 +27,9 @@ public class QTools extends JavaPlugin implements Listener{
 		
 		getCommand("soulenchant").setTabCompleter(new TabCompletion());
 		
+		// Add necessary custom recipes
+		this.getServer().addRecipe(Recipes.villagerContainer(this));
+		
 		// in case of /reload used and storage about players in a hashmap or PlayerJoinEvent
 		//for (Player player : Bukkit.getServer().getOnlinePlayers()) {
 		//    playerList.put(player.getName(), playerData(player));
