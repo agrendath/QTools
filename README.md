@@ -18,6 +18,8 @@ Commands:
 
 Other Functionality:
 - Fortune on hoes also increases drops from harvesting wheat, carrots, potatoes and beetroot with the hoe
+- Adds a new item called a "villager container" which can be used to trap villagers, transport them and then release them wherever the player wants. The recipe to craft a villager container is below. WARNING: Villagers will lose their jobs when transported this way!
+![image of villager container recipe](https://github.com/agrendath/QTools/images/villager_container_recipe.png)
 
 Soul Enchantments:
 - Magnetism: usable on all tools and weapons, when you destroy blocks or kill mobs/players the loot drops and xp drops get absorbed right into your inventory/xp bar
@@ -47,11 +49,12 @@ Permission Nodes:
 - quickbarplugin.tiago: Grants access to the /tiago command
 - quickbarplugin.qbs: Grants access to the /qbs command and the quickbar switching tool
 - quickbarplugin.bottles: Grants access to the /bottles command to convert xp into xp bottles
-- quickbarplugin.deaths: Grants access to the /janita command
-- quickbarplugin.apples: Grants access to the /janita2 command
+- quickbarplugin.deaths: Grants access to the /deaths command
+- quickbarplugin.apples: Grants access to the /apples command
 - quickbarplugin.lucas: Grants access to the /lucas command
 - quickbarplugin.souls: Grants access to the /souls command and the manipulating of souls
 - quickbarplugin.soulenchant: Grants access to the /soulenchant command
-- quickbarplugin.deathstop: Grants access to the /janitatop command
-- quickbarplugin.applestop: Grants access to the /janita2top command
+- quickbarplugin.deathstop: Grants access to the /deathstop command
+- quickbarplugin.applestop: Grants access to the /applestop command
 - quickbarplugin.extract: Grants access to the /extract command
+- quickbarplugin.villagercontainer: Grants access to using the villager container item to trap and release villagers
