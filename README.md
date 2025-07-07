@@ -19,7 +19,7 @@ Commands:
 Other Functionality:
 - Fortune on hoes also increases drops from harvesting wheat, carrots, potatoes and beetroot with the hoe
 - Adds a new item called a "villager container" which can be used to trap villagers, transport them and then release them wherever the player wants. The recipe to craft a villager container is below. WARNING: Villagers will lose their jobs when transported this way!
-![image of villager container recipe](https://github.com/agrendath/QTools/images/villager_container_recipe.png)
+![image of villager container recipe](https://github.com/agrendath/QTools/tree/main/images/villager_container_recipe.png)
 
 Soul Enchantments:
 - Magnetism: usable on all tools and weapons, when you destroy blocks or kill mobs/players the loot drops and xp drops get absorbed right into your inventory/xp bar
