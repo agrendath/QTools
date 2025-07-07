@@ -39,14 +39,16 @@ public class Recipes {
 	}
 	
 	public static boolean isEmptyVillagerContainer(ItemStack item)  {
-		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME)) return false;
-		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_EMPTY_LORE)) return false;
+		if(item == null)  return false;
+		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
+		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_EMPTY_LORE))  return false;
 		return true;
 	}
 	
 	public static boolean isFullVillagerContainer(ItemStack item)  {
-		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME)) return false;
-		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_FULL_LORE)) return false;
+		if(item == null)  return false;
+		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
+		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_FULL_LORE))  return false;
 		return true;
 	}
 

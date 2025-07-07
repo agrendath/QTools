@@ -21,7 +21,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockDropItemEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.ExpBottleEvent;
@@ -32,6 +31,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class Listeners implements Listener{
 	
@@ -106,8 +107,17 @@ public class Listeners implements Listener{
     		ItemStack item = e.getItem();
     		if(Recipes.isFullVillagerContainer(item))  {
     			// If the player right clicked a block with a full villager container
+    			
+    			// Check permission
+    			Player player = e.getPlayer();
+    			if(!player.hasPermission("quickbarplugin.villagercontainer"))  {
+    				player.sendMessage(ChatColor.RED + "You do not have permission to use a villager container");
+    				e.setCancelled(true);  // ensure we still dont place the block for no reason
+    				return;
+    			}
+    			
     			// Spawn a new villager
-    			World world = e.getPlayer().getWorld();
+    			World world = player.getWorld();
     			Location loc = e.getClickedBlock().getLocation();
     			loc.setY(loc.getY() + 1);
     			world.spawnEntity(loc, EntityType.VILLAGER);
@@ -117,7 +127,7 @@ public class Listeners implements Listener{
     			GeneralUtil.addLore(item, Constant.VILLAGER_CONTAINER_EMPTY_LORE);
     			
     			// Send a message to the player
-    			e.getPlayer().sendMessage(Constant.VILLAGER_RELEASED_MESSAGE);
+    			player.sendMessage(Constant.VILLAGER_RELEASED_MESSAGE);
     			
     			// Then make sure the original event is cancelled
     			e.setCancelled(true);
@@ -136,16 +146,24 @@ public class Listeners implements Listener{
     	if(entity instanceof Villager && Recipes.isEmptyVillagerContainer(e.getPlayer().getInventory().getItemInMainHand()))  {
     		// If a villager has been right clicked and the player is holding an empty villager container item
     		
+    		// Check permission
+			Player player = e.getPlayer();
+			if(!player.hasPermission("quickbarplugin.villagercontainer"))  {
+				player.sendMessage(ChatColor.RED + "You do not have permission to use a villager container");
+				e.setCancelled(true);  // ensure we still dont place the block for no reason
+				return;
+			}
+    		
     		// First remove the villager from the world
     		entity.remove();
     		
     		// Change the lore of the villager container item to state it contains a villager
-    		ItemStack villagerContainer = e.getPlayer().getInventory().getItemInMainHand();
+    		ItemStack villagerContainer = player.getInventory().getItemInMainHand();
     		GeneralUtil.clearLore(villagerContainer);
     		GeneralUtil.addLore(villagerContainer, Constant.VILLAGER_CONTAINER_FULL_LORE);
     		
     		// Send message to the player
-    		e.getPlayer().sendMessage(Constant.VILLAGER_TRAPPED_MESSAGE);
+    		player.sendMessage(Constant.VILLAGER_TRAPPED_MESSAGE);
     		
     		// Ensure that the original event doesn't happen (aka we don't open a villager menu)
     		e.setCancelled(true);
