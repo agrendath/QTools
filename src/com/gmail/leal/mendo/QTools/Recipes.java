@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 public class Recipes {
@@ -40,14 +41,18 @@ public class Recipes {
 	
 	public static boolean isEmptyVillagerContainer(ItemStack item)  {
 		if(item == null)  return false;
-		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
+		ItemMeta meta = item.getItemMeta();
+		if(meta == null)  return false;
+		if(!meta.getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
 		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_EMPTY_LORE))  return false;
 		return true;
 	}
 	
 	public static boolean isFullVillagerContainer(ItemStack item)  {
 		if(item == null)  return false;
-		if(!item.getItemMeta().getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
+		ItemMeta meta = item.getItemMeta();
+		if(meta == null)  return false;
+		if(!meta.getDisplayName().equals(Constant.VILLAGER_CONTAINER_NAME))  return false;
 		if(!GeneralUtil.hasLore(item, Constant.VILLAGER_CONTAINER_FULL_LORE))  return false;
 		return true;
 	}
